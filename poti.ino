@@ -6,6 +6,6 @@ Serial.begin(9600);
 
 void loop() {
   // put your main code here, to run repeatedly:
-snesorstate = analogRead(1);
+sensorstate = analogRead(1);
 Serial.println(sensorstate);
 }
