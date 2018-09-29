@@ -14,4 +14,5 @@ if (sensorstate < 500) {
 if (sensorstate > 500){
   Serial.println("tiefer");
 }
+delay(200);
 }
