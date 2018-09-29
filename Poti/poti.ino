@@ -16,9 +16,9 @@ if (sensorstate >= 550){
   Serial.println("tiefer");
   Serial.println(sensorstate);
 }
-/*else{
+else{
   Serial.println("perfekt");
   Serial.println(sensorstate);
-}*/
+}
 delay(200);
 }
