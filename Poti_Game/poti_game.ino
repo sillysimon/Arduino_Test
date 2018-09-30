@@ -23,15 +23,11 @@ else if (sensorstate > maximum){
   Serial.println("tiefer");
   Serial.println(sensorstate);
 }
-else (){
+else {
   Serial.println("perfekt");
   Serial.println(sensorstate);
 }
-if (buttonstate == HIGH){
-  int policy = random(0,1000);
-  int minimum = policy;
-  int maximum = policy + 50;
-  Serial.println("Neuer Wert")
-}
+
+
 
 }

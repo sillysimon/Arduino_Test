@@ -1,5 +1,6 @@
 {
     "board": "arduino:avr:mega",
     "configuration": "cpu=atmega2560",
-    "port": "COM3"
+    "port": "COM3",
+    "sketch": "Poti_Game\\poti_game.ino"
 }
