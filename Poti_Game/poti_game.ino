@@ -7,14 +7,17 @@ void setup() {
   // put your setup code here, to run once:
 Serial.begin(19200);
 pinMode(13, INPUT);
+pinMode(12, OUTPUT);
+digitalWrite(12, HIGH);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
 sensorstate = analogRead(1);
-buttonstate = digitalRead(13)
+buttonstate = digitalRead(13);
 if (sensorstate < minimum){
   Serial.println("höher");
+  Serial.println(sensorstate);
 }
 else if (sensorstate > maximum){
   Serial.println("tiefer");
@@ -22,6 +25,7 @@ else if (sensorstate > maximum){
 }
 else (){
   Serial.println("perfekt");
+  Serial.println(sensorstate);
 }
 if (buttonstate == HIGH){
   int policy = random(0,1000);
