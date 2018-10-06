@@ -26,10 +26,10 @@ else if (sensorstate > maximum){
 else {
   Serial.println("perfekt");
   Serial.println(sensorstate);
+  delay(3000);
   policy = random(0,1000);
   minimum = policy;
   maximum = policy + 50;
-  delay(3000)
 }
 
 
