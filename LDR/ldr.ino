@@ -9,7 +9,7 @@ void loop() {
   // put your main code here, to run repeatedly
   sensorstate = analogRead(0);
   Serial.println(sensorstate);
-  if (sensorstate > 400){
+  if (sensorstate < 400){
       digitalWrite(2, HIGH);
   }
   else {
