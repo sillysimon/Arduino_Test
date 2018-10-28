@@ -1,17 +1,16 @@
+//a little game for the guitar,if the "0" turns into a "/" you play the given fret
 #include <LiquidCrystal.h>
-LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
+LiquidCrystal lcd(7, 8, 9, 10, 11, 12); //lcd pins at 7-12
 int lcdsize[] = {16, 2};
 int randomize = 0;
 int speed = 0;
 void setup() {
-  // put your setup code here, to run once:
 lcd.begin(lcdsize[0], lcdsize[1]);
 lcd.print("Gitarren Trainer");
 Serial.begin(9600);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
 speed = analogRead(0) + 500;
 lcd.setCursor(12, 1);
 lcd.print(speed);
