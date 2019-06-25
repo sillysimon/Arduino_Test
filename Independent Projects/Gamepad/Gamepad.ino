@@ -16,10 +16,12 @@
 #define U1y A1
 #define U2x A3
 #define U2y A2
+Joystick_ Joystick(JOYSTICK_TYPE_GAMEPAD,);
 void setup()
 {
 /* Serial.begin(9600);
 Serial.println("Hallo Welt");*/
+Joystick.begin();
 }
 void loop() {
 
