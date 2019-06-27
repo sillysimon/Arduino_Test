@@ -46,10 +46,9 @@ if(digitalRead(Ddown)==1){
   if(digitalRead(Dleft)==1){Joystick.setHatSwitch(0,225);goto dpad_end;}
   if(digitalRead(Ddown)==1){Joystick.setHatSwitch(0,180);goto dpad_end;}
 }
-if(digitalRead(Dleft)==1){
-  Joystick.setHatSwitch(0,270);goto dpad_end;
-}
-if(digitalRead(Dright)==1)
+if(digitalRead(Dleft)==1){Joystick.setHatSwitch(0,270);goto dpad_end;}
+if(digitalRead(Dright)==1){Joystick.setHatSwitch(0,90);goto dpad_end;}
+goto dpad_end;
 dpad_end:
 
 
