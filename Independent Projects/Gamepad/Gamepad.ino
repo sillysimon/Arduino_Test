@@ -29,10 +29,10 @@ void setup()
 for(int pin=0; pin >= 10; pin+=1){
   pinMode(pin, INPUT);
 } //set all Pins to INPUT
-Serial.begin(9600);
-Serial.println("Hallo Welt");
+//Serial.begin(9600);
+//Serial.println("Hallo Welt");
 Joystick.begin();
-Serial.println("Hallo Welt");
+//Serial.println("Hallo Welt");
 }
 void loop() {
 //Joystick.setXAxis(AnalogRead(U1x));

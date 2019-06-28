@@ -29,40 +29,40 @@ void setup()
 for(int pin=0; pin >= 10; pin+=1){
   pinMode(pin, INPUT);
 } //set all Pins to INPUT
-//Serial.begin(9600);
-//Serial.println("Hallo Welt");
+Serial.begin(9600);
+Serial.println("Hallo Welt");
 Joystick.begin();
-//Serial.println("Hallo Welt");
+Serial.println("Hallo Welt");
 }
 void loop() {
 //Joystick.setXAxis(AnalogRead(U1x));
 //Joystick.setYAxis(AnalogRead(U1y));
 //dpad check
   if(digitalRead(Dup)==1){
-  if(digitalRead(Dright)==1){Joystick.setHatSwitch(0,45);goto dpad_end;}
-  if(digitalRead(Dleft)==1){Joystick.setHatSwitch(0,315);goto dpad_end;}
-  if(Dup==1){Joystick.setHatSwitch(0,1);goto dpad_end;}
+  if(digitalRead(Dright)==1){Joystick.setHatSwitch(0,45);Serial.println("Dpad:45°");goto dpad_end;}
+  if(digitalRead(Dleft)==1){Joystick.setHatSwitch(0,315);Serial.println("Dpad:315°");goto dpad_end;}
+  if(Dup==1){Joystick.setHatSwitch(0,1);Serial.println("Dpad:0°");goto dpad_end;}
 
 }
 if(digitalRead(Ddown)==1){
-  if(digitalRead(Dright)==1){Joystick.setHatSwitch(0,125);goto dpad_end;}
-  if(digitalRead(Dleft)==1){Joystick.setHatSwitch(0,225);goto dpad_end;}
-  if(digitalRead(Ddown)==1){Joystick.setHatSwitch(0,180);goto dpad_end;}
+  if(digitalRead(Dright)==1){Joystick.setHatSwitch(0,125);Serial.println("Dpad:125°");goto dpad_end;}
+  if(digitalRead(Dleft)==1){Joystick.setHatSwitch(0,225);Serial.println("Dpad:255°");goto dpad_end;}
+  if(digitalRead(Ddown)==1){Joystick.setHatSwitch(0,180);Serial.println("Dpad:180°");goto dpad_end;}
 }
-if(digitalRead(Dleft)==1){Joystick.setHatSwitch(0,270);goto dpad_end;}
-if(digitalRead(Dright)==1){Joystick.setHatSwitch(0,90);goto dpad_end;}
+if(digitalRead(Dleft)==1){Joystick.setHatSwitch(0,270);Serial.println("Dpad:270°");goto dpad_end;}
+if(digitalRead(Dright)==1){Joystick.setHatSwitch(0,90);Serial.println("Dpad:90°");goto dpad_end;}
 if (digitalRead(Dup)==0) {
   if(digitalRead(Ddown)==0){
     if(digitalRead(Dleft)==0){
-      if(digitalRead(Dright)==0){Joystick.setHatSwitch(0,-1)}
+      if(digitalRead(Dright)==0){Joystick.setHatSwitch(0,-1);Serial.println("Dpad:45°");goto dpad_end;}
     }
   }
 }
 goto dpad_end;
 dpad_end:
-Joystick.setButton(1,digitalRead(A));
-Joystick.setButton(3,digitalRead(X));
-Joystick.setButton(4,digitalRead(Y));
-Joystick.setButton(2,digitalRead(B));
+Joystick.setButton(1,digitalRead(A));Serial.println("A");
+Joystick.setButton(3,digitalRead(X));Serial.println("X");
+Joystick.setButton(4,digitalRead(Y));Serial.println("Y");
+Joystick.setButton(2,digitalRead(B));Serial.println("B");
 
 }
