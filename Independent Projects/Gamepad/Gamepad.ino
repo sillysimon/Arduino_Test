@@ -1,3 +1,5 @@
+#include <Joystick.h>
+
 #define Dup 2
 #define Ddown 5
 #define Dleft 3
@@ -27,19 +29,20 @@ void setup()
 for(int pin=0; pin >= 10; pin+=1){
   pinMode(pin, INPUT);
 } //set all Pins to INPUT
-/* Serial.begin(9600);
-Serial.println("Hallo Welt");*/
+Serial.begin(9600);
+Serial.println("Hallo Welt");
 Joystick.begin();
+Serial.println("Hallo Welt");
 }
 void loop() {
-Joystick.setXAxis(AnalogRead(U1x));
-Joystick.setYAxis(AnalogRead(U1y));
+//Joystick.setXAxis(AnalogRead(U1x));
+//Joystick.setYAxis(AnalogRead(U1y));
 //dpad check
-f(digitalRead(Dup)==1){
+  if(digitalRead(Dup)==1){
   if(digitalRead(Dright)==1){Joystick.setHatSwitch(0,45);goto dpad_end;}
   if(digitalRead(Dleft)==1){Joystick.setHatSwitch(0,315);goto dpad_end;}
-  if(Dup==1){Joystick.setHatSwitch(0,0);goto dpad_end;}
-  dpad_lock=true;
+  if(Dup==1){Joystick.setHatSwitch(0,1);goto dpad_end;}
+
 }
 if(digitalRead(Ddown)==1){
   if(digitalRead(Dright)==1){Joystick.setHatSwitch(0,125);goto dpad_end;}
@@ -48,8 +51,18 @@ if(digitalRead(Ddown)==1){
 }
 if(digitalRead(Dleft)==1){Joystick.setHatSwitch(0,270);goto dpad_end;}
 if(digitalRead(Dright)==1){Joystick.setHatSwitch(0,90);goto dpad_end;}
+if (digitalRead(Dup)==0) {
+  if(digitalRead(Ddown)==0){
+    if(digitalRead(Dleft)==0){
+      if(digitalRead(Dright)==0){Joystick.setHatSwitch(0,-1)}
+    }
+  }
+}
 goto dpad_end;
 dpad_end:
-
+Joystick.setButton(1,digitalRead(A));
+Joystick.setButton(3,digitalRead(X));
+Joystick.setButton(4,digitalRead(Y));
+Joystick.setButton(2,digitalRead(B));
 
 }
