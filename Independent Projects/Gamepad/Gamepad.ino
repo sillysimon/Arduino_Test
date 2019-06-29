@@ -35,28 +35,26 @@ Joystick.begin();
 //Serial.println("Hallo Welt");
 }
 void loop() {
-//Joystick.setXAxis(AnalogRead(U1x));
-//Joystick.setYAxis(AnalogRead(U1y));
 //dpad check
-  if(digitalRead(Dup)==1){
-  if(digitalRead(Dright)==1){Joystick.setHatSwitch(0,45);goto dpad_end;}
-  if(digitalRead(Dleft)==1){Joystick.setHatSwitch(0,315);goto dpad_end;}
-  if(Dup==1){Joystick.setHatSwitch(0,1);goto dpad_end;}
+if(digitalRead(Dup)==1){
+if(digitalRead(Dright)==1){Joystick.setHatSwitch(0,45);goto dpad_end;}
+if(digitalRead(Dleft)==1){Joystick.setHatSwitch(0,315);goto dpad_end;}
+else{Joystick.setHatSwitch(0,1);goto dpad_end;}
 
 }
 if(digitalRead(Ddown)==1){
-  if(digitalRead(Dright)==1){Joystick.setHatSwitch(0,125);goto dpad_end;}
-  if(digitalRead(Dleft)==1){Joystick.setHatSwitch(0,225);goto dpad_end;}
-  if(digitalRead(Ddown)==1){Joystick.setHatSwitch(0,180);goto dpad_end;}
+if(digitalRead(Dright)==1){Joystick.setHatSwitch(0,135);goto dpad_end;}
+if(digitalRead(Dleft)==1){Joystick.setHatSwitch(0,225);goto dpad_end;}
+if(digitalRead(Ddown)==1){Joystick.setHatSwitch(0,180);goto dpad_end;}
 }
 if(digitalRead(Dleft)==1){Joystick.setHatSwitch(0,270);goto dpad_end;}
 if(digitalRead(Dright)==1){Joystick.setHatSwitch(0,90);goto dpad_end;}
 if (digitalRead(Dup)==0) {
-  if(digitalRead(Ddown)==0){
-    if(digitalRead(Dleft)==0){
-      if(digitalRead(Dright)==0){Joystick.setHatSwitch(0,-1)}
-    }
+if(digitalRead(Ddown)==0){
+  if(digitalRead(Dleft)==0){
+    if(digitalRead(Dright)==0){Joystick.setHatSwitch(0,-1);goto dpad_end;}
   }
+}
 }
 goto dpad_end;
 dpad_end:
@@ -64,5 +62,8 @@ Joystick.setButton(1,digitalRead(A));
 Joystick.setButton(3,digitalRead(X));
 Joystick.setButton(4,digitalRead(Y));
 Joystick.setButton(2,digitalRead(B));
+//Joystick
+Joystick.setXAxis(analogRead(U1x));
+Joystick.setYAxis(analogRead(U1y));
 
 }
