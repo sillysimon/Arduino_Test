@@ -28,5 +28,5 @@ void loop() {
   if(digitalRead(Y)==1){Serial.println("Y");}
   if(digitalRead(B)==1){Serial.println("B");}
   if(digitalRead(A)==1){Serial.println("A");}*/
-  Serial.println(analogRead(U1x));
+  Serial.println(analogRead(U1y));
 }

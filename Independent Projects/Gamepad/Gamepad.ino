@@ -65,5 +65,7 @@ Joystick.setButton(2,digitalRead(B));
 //Joystick
 Joystick.setXAxis(analogRead(U1x));
 Joystick.setYAxis(analogRead(U1y));
+Joystick.setRxAxis(analogRead(U2x));
+Joystick.setRyAxis(analogRead(U2y));
 
 }
