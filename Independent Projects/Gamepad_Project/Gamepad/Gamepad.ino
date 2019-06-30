@@ -1,6 +1,7 @@
 #include <Joystick.h>
 //uses Joystick Library from MHeironimus
 //can be found under https://github.com/MHeironimus/ArduinoJoystickLibrary
+//name ports
 #define Dup 2
 #define Ddown 5
 #define Dleft 3

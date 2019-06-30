@@ -20,6 +20,7 @@ void setup(){
   Serial.begin(9600);
 }
 void loop() {
+//send button data
   if(digitalRead(Dup)==1){Serial.println("Dup");}
   if(digitalRead(Ddown)==1){Serial.println("Ddown");}
   if(digitalRead(Dleft)==1){Serial.println("Dleft");}
@@ -28,6 +29,7 @@ void loop() {
   if(digitalRead(Y)==1){Serial.println("Y");}
   if(digitalRead(B)==1){Serial.println("B");}
   if(digitalRead(A)==1){Serial.println("A");}
+  //send joystick data
   Serial.print("U1x:")
   Serial.println(analogRead(U1x));
   Serial.print("U1y:")
