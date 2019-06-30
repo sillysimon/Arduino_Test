@@ -1,5 +1,6 @@
 #include <Joystick.h>
-
+//uses Joystick Library from MHeironimus
+//can be found under https://github.com/MHeironimus/ArduinoJoystickLibrary
 #define Dup 2
 #define Ddown 5
 #define Dleft 3
@@ -18,10 +19,12 @@
 #define U1y A1
 #define U2x A3
 #define U2y A2
+//constructor Codebase from MHeironimus' Code Examples for the ArduinoJoystickLibrary under GNU Lesser General Public License v3.0
+//can be found under https://github.com/MHeironimus/ArduinoJoystickLibrary/blob/master/Joystick/examples/GamepadExample/GamepadExample.ino
 Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,JOYSTICK_TYPE_GAMEPAD,
   10, 1,                  // Button Count, Hat Switch Count
   true, true, false,     // X and Y, but no Z Axis
-  true, true, false,   // No Rx, Ry, or Rz
+  true, true, false,   // Rx, Ry but no Rz
   false, false,          // No rudder or throttle
   false, false, false);  // No accelerator, brake, or steering);
 void setup()
@@ -29,10 +32,7 @@ void setup()
 for(int pin=0; pin >= 10; pin+=1){
   pinMode(pin, INPUT);
 } //set all Pins to INPUT
-//Serial.begin(9600);
-//Serial.println("Hallo Welt");
 Joystick.begin();
-//Serial.println("Hallo Welt");
 }
 void loop() {
 //dpad check
@@ -63,8 +63,8 @@ Joystick.setButton(3,digitalRead(X));
 Joystick.setButton(4,digitalRead(Y));
 Joystick.setButton(2,digitalRead(B));
 //Joystick
-Joystick.setXAxis(analogRead(U1x));
-Joystick.setYAxis(analogRead(U1y));
+Joystick.setXAxis(analogRead(U1y));
+Joystick.setYAxis(analogRead(U1x));
 Joystick.setRxAxis(analogRead(U2x));
 Joystick.setRyAxis(analogRead(U2y));
 
