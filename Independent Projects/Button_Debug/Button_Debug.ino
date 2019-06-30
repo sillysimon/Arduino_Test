@@ -20,13 +20,21 @@ void setup(){
   Serial.begin(9600);
 }
 void loop() {
-  /*if(digitalRead(Dup)==1){Serial.println("Dup");}
+  if(digitalRead(Dup)==1){Serial.println("Dup");}
   if(digitalRead(Ddown)==1){Serial.println("Ddown");}
   if(digitalRead(Dleft)==1){Serial.println("Dleft");}
   if(digitalRead(Dright)==1){Serial.println("Dright");}
   if(digitalRead(X)==1){Serial.println("X");}
   if(digitalRead(Y)==1){Serial.println("Y");}
   if(digitalRead(B)==1){Serial.println("B");}
-  if(digitalRead(A)==1){Serial.println("A");}*/
+  if(digitalRead(A)==1){Serial.println("A");}
+  Serial.print("U1x:")
+  Serial.println(analogRead(U1x));
+  Serial.print("U1y:")
+  Serial.println(analogRead(U1y));
+  Serial.print("U2x:")
+  Serial.println(analogRead(U2x));
+  Serial.print("U2y:")
   Serial.println(analogRead(U2y));
+
 }
