@@ -20,8 +20,8 @@
 #define U2y A2
 Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,JOYSTICK_TYPE_GAMEPAD,
   10, 1,                  // Button Count, Hat Switch Count
-  true, true, true,     // X and Y, but no Z Axis
-  true, true, true,   // No Rx, Ry, or Rz
+  true, true, false,     // X and Y, but no Z Axis
+  true, true, false,   // No Rx, Ry, or Rz
   false, false,          // No rudder or throttle
   false, false, false);  // No accelerator, brake, or steering);
 void setup()
