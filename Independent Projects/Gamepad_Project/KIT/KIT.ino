@@ -1,5 +1,5 @@
 #include <Keyboard.h>
-int speed=200;
+int speed=100;
 #define Dup 2
 #define Ddown 5
 #define Dleft 3
@@ -19,35 +19,26 @@ int speed=200;
 #define U2x A3
 #define U2y A2
 void setup() {
-  // put your setup code here, to run once:
 Keyboard.begin();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  //checks for pressed buttons. If a button is triggered the assigned scipt is being executed
 if(digitalRead(Dup)==1){
-  Keyboard.press(KEY_RIGHT_GUI);
+  Keyboard.press(KEY_RIGHT_GUI);//press a button in this case the windows button
+  Keyboard.releaseAll();//release all pressed buttons
+  delay(speed);//wait the previously set time
+    Keyboard.press(KEY_TAB);//tab
   Keyboard.releaseAll();
   delay(speed);
-    Keyboard.press(KEY_TAB);
+
+for(int i=1;i<=5;i+=1){ //presses a button 5 times
+    Keyboard.press(KEY_DOWN_ARROW);//arrow down
   Keyboard.releaseAll();
   delay(speed);
-    Keyboard.press(KEY_DOWN_ARROW);
-  Keyboard.releaseAll();
-  delay(speed);
-      Keyboard.press(KEY_DOWN_ARROW);
-  Keyboard.releaseAll();
-  delay(speed);
-      Keyboard.press(KEY_DOWN_ARROW);
-  Keyboard.releaseAll();
-  delay(speed);
-      Keyboard.press(KEY_DOWN_ARROW);
-  Keyboard.releaseAll();
-  delay(speed);
-      Keyboard.press(KEY_DOWN_ARROW);
-  Keyboard.releaseAll();
-  delay(speed);
-    Keyboard.press(KEY_RETURN);
+}
+
+    Keyboard.press(KEY_RETURN);//enter
   Keyboard.releaseAll();
   delay(speed);
         Keyboard.press(KEY_DOWN_ARROW);
@@ -56,5 +47,34 @@ if(digitalRead(Dup)==1){
       Keyboard.press(KEY_RETURN);
   Keyboard.releaseAll();
   delay(speed);
-} 
+}
+if(digitalRead(Dright)==1){
+    Keyboard.press(KEY_RIGHT_GUI);
+  Keyboard.releaseAll();
+  delay(speed);
+   Keyboard.press(KEY_TAB);
+  Keyboard.releaseAll();
+  delay(speed);
+  for(int i=1;i<=8;i+=1){ //presses a button 8 times
+      Keyboard.press(KEY_DOWN_ARROW);
+      Keyboard.releaseAll();
+      delay(speed); }
+  Keyboard.press(KEY_DOWN_ARROW);
+  Keyboard.releaseAll();
+  delay(speed);
+  Keyboard.press(KEY_RETURN);
+  Keyboard.releaseAll();
+  delay(speed);
+  }
+  if(digitalRead(Ddown)==1){
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press("t");
+    Keyboard.releaseAll();
+    delay(speed);
+    Keyboard.print("shutdown now");//type in a string of text
+    Keyboard.press(KEY_RETURN);
+    Keyboard.releaseAll();
+    delay(speed);
+  }
 }

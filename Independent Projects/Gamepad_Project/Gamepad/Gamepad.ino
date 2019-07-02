@@ -22,12 +22,13 @@
 #define U2y A2
 //constructor Codebase from MHeironimus' Code Examples for the ArduinoJoystickLibrary under GNU Lesser General Public License v3.0
 //can be found under https://github.com/MHeironimus/ArduinoJoystickLibrary/blob/master/Joystick/examples/GamepadExample/GamepadExample.ino
-Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,JOYSTICK_TYPE_GAMEPAD,
+Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,JOYSTICK_TYPE_GAMEPAD, //Joystick constructor
   10, 1,                  // Button Count, Hat Switch Count
   true, true, false,     // X and Y, but no Z Axis
   true, true, false,   // Rx, Ry but no Rz
   false, false,          // No rudder or throttle
   false, false, false);  // No accelerator, brake, or steering);
+
 void setup()
 {
 for(int pin=0; pin >= 10; pin+=1){
@@ -37,8 +38,9 @@ Joystick.begin();
 }
 void loop() {
 //dpad check
+//sets rotaion of HatSwitch in 45° steps
 if(digitalRead(Dup)==1){
-if(digitalRead(Dright)==1){Joystick.setHatSwitch(0,45);goto dpad_end;}
+if(digitalRead(Dright)==1){Joystick.setHatSwitch(0,45);goto dpad_end;}//everytime one event is triggered it goes straight to dpad_end
 if(digitalRead(Dleft)==1){Joystick.setHatSwitch(0,315);goto dpad_end;}
 else{Joystick.setHatSwitch(0,1);goto dpad_end;}
 
@@ -59,12 +61,12 @@ if(digitalRead(Ddown)==0){
 }
 goto dpad_end;
 dpad_end:
-Joystick.setButton(1,digitalRead(A));
+Joystick.setButton(1,digitalRead(A));//sets Joystick buttos to real button value
 Joystick.setButton(3,digitalRead(X));
 Joystick.setButton(4,digitalRead(Y));
 Joystick.setButton(2,digitalRead(B));
 //Joystick
-Joystick.setXAxis(analogRead(U1y));
+Joystick.setXAxis(analogRead(U1y));//sets Analog Sticks to real Joystick value
 Joystick.setYAxis(analogRead(U1x));
 Joystick.setRxAxis(analogRead(U2x));
 Joystick.setRyAxis(analogRead(U2y));
