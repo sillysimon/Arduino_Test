@@ -68,8 +68,11 @@ if(digitalRead(Dright)==1){
   }
   if(digitalRead(Ddown)==1){
     Keyboard.press(KEY_LEFT_CTRL);
+    delay(speed);
     Keyboard.press(KEY_LEFT_ALT);
+    delay(speed);
     Keyboard.press("t");
+    delay(speed);
     Keyboard.releaseAll();
     delay(speed);
     Keyboard.print("shutdown now");//type in a string of text
