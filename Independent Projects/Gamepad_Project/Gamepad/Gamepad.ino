@@ -65,6 +65,8 @@ Joystick.setButton(1,digitalRead(A));//sets Joystick buttos to real button value
 Joystick.setButton(3,digitalRead(X));
 Joystick.setButton(4,digitalRead(Y));
 Joystick.setButton(2,digitalRead(B));
+Joystick.setButton(7,digitalRead(Select));
+Joystick.setButton(8,digitalRead(Start));
 //Joystick
 Joystick.setXAxis(analogRead(U1y));//sets Analog Sticks to real Joystick value
 Joystick.setYAxis(analogRead(U1x));
