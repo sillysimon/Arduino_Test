@@ -23,7 +23,7 @@
 //constructor Codebase from MHeironimus' Code Examples for the ArduinoJoystickLibrary under GNU Lesser General Public License v3.0
 //can be found under https://github.com/MHeironimus/ArduinoJoystickLibrary/blob/master/Joystick/examples/GamepadExample/GamepadExample.ino
 Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,JOYSTICK_TYPE_GAMEPAD, //Joystick constructor
-  10, 1,                  // Button Count, Hat Switch Count
+  4, 1,                  // Button Count, Hat Switch Count
   true, true, false,     // X and Y, but no Z Axis
   true, true, false,   // Rx, Ry but no Rz
   false, false,          // No rudder or throttle
@@ -62,11 +62,11 @@ if(digitalRead(Ddown)==0){
 goto dpad_end;
 dpad_end:
 Joystick.setButton(1,digitalRead(A));//sets Joystick buttos to real button value
-Joystick.setButton(3,digitalRead(X));
-Joystick.setButton(4,digitalRead(Y));
-Joystick.setButton(2,digitalRead(B));
-Joystick.setButton(7,digitalRead(Select));
-Joystick.setButton(8,digitalRead(Start));
+Joystick.setButton(2,digitalRead(X));
+Joystick.setButton(3,digitalRead(Y));
+Joystick.setButton(0,digitalRead(B));
+/*Joystick.setButton(7,digitalRead(Select));
+Joystick.setButton(8,digitalRead(Start));*/
 //Joystick
 Joystick.setXAxis(analogRead(U1y));//sets Analog Sticks to real Joystick value
 Joystick.setYAxis(analogRead(U1x));
