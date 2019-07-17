@@ -83,6 +83,104 @@ if(digitalRead(Dup)==1){
   Joystick.setButton(1,0);
   delay(340);
 
+  Joystick.setButton(1,1);
+  delay(1110);
+  Joystick.setButton(1,0);
+  delay(1010);
+
+  Joystick.setButton(1,1);
+  delay(180);
+  Joystick.setButton(1,0);
+  delay(890);
+
+  Joystick.setButton(1,1);
+  delay(140);
+  Joystick.setButton(1,0);
+  delay(640);
+
+  Joystick.setButton(1,1);
+  delay(220);
+  Joystick.setButton(1,0);
+  delay(820);
+
+  Joystick.setButton(1,1);
+  delay(190);
+  Joystick.setButton(1,0);
+  delay(720);
+
+  Joystick.setButton(1,1);
+  delay(140);
+  Joystick.setButton(1,0);
+  delay(1160);
+
+  Joystick.setButton(1,1);
+  delay(160);
+  Joystick.setButton(1,0);
+  delay(830);
+
+  Joystick.setButton(1,1);
+  delay(570);
+  Joystick.setButton(1,0);
+  delay(730);
+
+  Joystick.setButton(1,1);
+  delay(480);
+  Joystick.setButton(1,0);
+  delay(370);
+
+  Joystick.setButton(1,1);
+  delay(180);
+  Joystick.setButton(1,0);
+  delay(300);
+
+  Joystick.setButton(1,1);
+  delay(440);
+  Joystick.setButton(1,0);
+  delay(980);
+
+  Joystick.setButton(1,1);
+  delay(280);
+  Joystick.setButton(1,0);
+  delay(380);
+
+  Joystick.setButton(1,1);
+  delay(310);
+  Joystick.setButton(1,0);
+  delay(730);
+
+  Joystick.setButton(1,1);
+  delay(310);
+  Joystick.setButton(1,0);
+  delay(1130);
+
+  Joystick.setButton(1,1);
+  delay(150);
+  Joystick.setButton(1,0);
+  delay(420);
+
+  Joystick.setButton(1,1);
+  delay(240);
+  Joystick.setButton(1,0);
+  delay(340);
+
+  Joystick.setButton(1,1);
+  delay(610);
+  Joystick.setButton(1,0);
+  delay(230);
+
+  Joystick.setButton(1,1);
+  delay(690);
+  Joystick.setButton(1,0);
+  delay(250);
+
+  Joystick.setButton(1,1);
+  delay(2480);
+  Joystick.setButton(1,0);
+  delay(170);
+
+  Joystick.setButton(3,0);
+  Joystick.setHatSwitch(0,-1);  
+
 
 
 }
